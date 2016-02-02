@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Import time:</strong>
+  <%= @import.import_time %>
+</p>
+
+<p>
+  <strong>Import:</strong>
+  <%= @import.import_id %>
+</p>
+
+<%= link_to 'Edit', edit_import_path(@import) %> |
+<%= link_to 'Back', imports_path %>

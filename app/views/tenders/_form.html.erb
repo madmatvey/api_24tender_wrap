@@ -1,0 +1,195 @@
+<%= form_for @tender, :html => { :class => "form-horizontal tender" } do |f| %>
+
+  <% if @tender.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@tender.errors.count, "error") %> prohibited this tender from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @tender.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contracttype, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contracttype, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contracttype) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :purchasestatus, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :purchasestatus, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:purchasestatus) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :changedate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :changedate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:changedate) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :purchasestart, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :purchasestart, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:purchasestart) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :purchasefinishdate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :purchasefinishdate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:purchasefinishdate) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :purchaseplace, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :purchaseplace, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:purchaseplace) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contractdate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contractdate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contractdate) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :price, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:price) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :pricetext, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :pricetext, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:pricetext) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :finishprice, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :finishprice, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:finishprice) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contractsubject, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contractsubject, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contractsubject) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tenderofficiallink, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tenderofficiallink, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tenderofficiallink) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tenderofficialname, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tenderofficialname, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tenderofficialname) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :comment, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :comment, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:comment) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :link, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :link, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:link) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tenderclassific, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tenderclassific, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tenderclassific) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :paymentform, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :paymentform, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:paymentform) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :paymentcondition, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :paymentcondition, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:paymentcondition) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tradecategory, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tradecategory, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tradecategory) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :registereddate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :registereddate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:registereddate) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :purchasedestination, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :purchasedestination, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:purchasedestination) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contactwith, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contactwith, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contactwith) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contactwithposition, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contactwithposition, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contactwithposition) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tenders_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

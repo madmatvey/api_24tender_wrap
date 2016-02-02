@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+  gem 'less-rails-bootstrap'
+  gem 'therubyracer'
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
+
+gem 'paperclip', '~> 3.0'
 gem 'sequel'
 gem 'nokogiri'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

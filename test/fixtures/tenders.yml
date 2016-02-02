@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  contracttype: MyString
+  purchasestatus: MyString
+  changedate: MyString
+  purchasestart: MyString
+  purchasefinishdate: MyString
+  purchaseplace: MyString
+  contractdate: MyString
+  price: MyString
+  pricetext: MyString
+  finishprice: MyString
+  contractsubject: MyString
+  tenderofficiallink: MyString
+  tenderofficialname: MyString
+  comment: MyString
+  link: MyString
+  tenderclassific: MyString
+  paymentform: MyString
+  paymentcondition: MyString
+  tradecategory: MyString
+  registereddate: MyString
+  purchasedestination: MyString
+  contactwith: MyString
+  contactwithposition: MyString
+
+two:
+  name: MyString
+  contracttype: MyString
+  purchasestatus: MyString
+  changedate: MyString
+  purchasestart: MyString
+  purchasefinishdate: MyString
+  purchaseplace: MyString
+  contractdate: MyString
+  price: MyString
+  pricetext: MyString
+  finishprice: MyString
+  contractsubject: MyString
+  tenderofficiallink: MyString
+  tenderofficialname: MyString
+  comment: MyString
+  link: MyString
+  tenderclassific: MyString
+  paymentform: MyString
+  paymentcondition: MyString
+  tradecategory: MyString
+  registereddate: MyString
+  purchasedestination: MyString
+  contactwith: MyString
+  contactwithposition: MyString

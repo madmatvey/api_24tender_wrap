@@ -22,7 +22,21 @@ class NokogiriController < ApplicationController
       data = Hash.from_xml(doc.to_s)
       xml_pages_count = data["source"]["PagesCount"].to_i
      
-      tenders = data["source"]["tender"] 
+      tenders = data["source"]["tender"]
+
+      if xml_pages_count > 1
+        page = 2
+        (xml_pages_count-1).times do
+          apiurl = "http://24tender.ru/api/trades/search?modifiedFrom="+Time.at(import.time_from).xmlschema+"&modifiedTo="+Time.at(import.time_to).xmlschema+"&page="+page.to_s
+          doc = Nokogiri.XML(open(apiurl))
+          doc.encoding = 'utf-8'
+          data = (Hash.from_xml(doc.to_s))
+          tenders += data["source"]["tender"]
+          page += 1
+        end
+      end
+
+       
       if tenders != nil
         results = tenders 
         import.save

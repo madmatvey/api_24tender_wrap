@@ -69,6 +69,6 @@ class ImportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def import_params
-      params.require(:import).permit(:import_time, :import_id)
+      params.require(:import).permit(:time_to, :time_from)
     end
 end

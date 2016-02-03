@@ -18,7 +18,7 @@ class ImportsControllerTest < ActionController::TestCase
 
   test "should create import" do
     assert_difference('Import.count') do
-      post :create, import: { import_id: @import.import_id, import_time: @import.import_time }
+      post :create, import: { time_from: @import.time_from, time_to: @import.time_to }
     end
 
     assert_redirected_to import_path(assigns(:import))
@@ -35,7 +35,7 @@ class ImportsControllerTest < ActionController::TestCase
   end
 
   test "should update import" do
-    patch :update, id: @import, import: { import_id: @import.import_id, import_time: @import.import_time }
+    patch :update, id: @import, import: { time_from: @import.time_from, time_to: @import.time_to }
     assert_redirected_to import_path(assigns(:import))
   end
 

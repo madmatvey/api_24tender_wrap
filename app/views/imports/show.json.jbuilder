@@ -1,1 +1,1 @@
-json.extract! @import, :id, :import_time, :import_id, :created_at, :updated_at
+json.extract! @import, :id, :time_to, :time_from, :created_at, :updated_at

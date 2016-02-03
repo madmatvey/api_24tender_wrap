@@ -1,25 +1,41 @@
-<%= form_for(@import) do |f| %>
-  <% if @import.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@import.errors.count, "error") %> prohibited this import from being saved:</h2>
+<%= form_for @import, :html => { :class => "form-horizontal import" } do |f| %>
 
-      <ul>
-      <% @import.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @import.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@import.errors.count, "error") %> prohibited this import from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @import.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :import_time %><br>
-    <%= f.time_select :import_time %>
+  <div class="form-group">
+    <%= f.label :time_to, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :time_to, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:time_to) %>
   </div>
-  <div class="field">
-    <%= f.label :import_id %><br>
-    <%= f.number_field :import_id %>
+  <div class="form-group">
+    <%= f.label :time_from, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :time_from, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:time_from) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                imports_path, :class => 'btn btn-default' %>
+    </div>
   </div>
+
 <% end %>

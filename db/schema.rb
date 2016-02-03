@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202131930) do
+ActiveRecord::Schema.define(version: 20160203122459) do
 
   create_table "imports", force: :cascade do |t|
-    t.time     "import_time"
-    t.integer  "import_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "time_to"
+    t.integer  "time_from"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tenders", force: :cascade do |t|

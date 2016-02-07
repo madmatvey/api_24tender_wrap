@@ -36,7 +36,8 @@ class NokogiriController < ApplicationController
         end
       end
 
-       
+      tenders_array_to_save = []
+
       if tenders != nil
         results = tenders 
         import.save
@@ -67,7 +68,11 @@ class NokogiriController < ApplicationController
           tmp_tender.purchasedestination  = node['PurchaseDestination']
           tmp_tender.contactwith          = node['ContactWith']
           tmp_tender.contactwithposition  = node['ContactWithPosition']
-          tmp_tender.save
+          # tmp_tender.save
+          tenders_array_to_save << tmp_tender
+        end
+        ActiveRecord::Base.transaction do
+          tenders_array_to_save.map {|tender| tender.save! } 
         end
       else
         results = "OOPS! There are no new tenders in database!" 

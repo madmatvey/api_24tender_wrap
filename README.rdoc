@@ -7,6 +7,6 @@ Test app for import tender procedures from API 24TENDER.ru
 * Ruby version
   2.2.3
 * to Start
-<tt>bundle upgrade</tt>
-<tt>bundle install</tt>
-<tt>rake db:migrate</tt>.
+<tt>bundle upgrade</tt></br>
+<tt>bundle install</tt></br>
+<tt>rake db:migrate</tt></br>

@@ -1,12 +1,6 @@
 == README
 
-[![Code Climate](https://codeclimate.com/github/madmatvey/xml2apitest/badges/gpa.svg)](https://codeclimate.com/github/madmatvey/xml2apitest)
-
-{<img src="https://codeclimate.com/github/madmatvey/xml2apitest/badges/gpa.svg" />}[https://codeclimate.com/github/madmatvey/xml2apitest]
-
-{<img src="https://codeclimate.com/github/madmatvey/xml2apitest/badges/coverage.svg" />}[https://codeclimate.com/github/madmatvey/xml2apitest/coverage]
-
-{<img src="https://codeclimate.com/github/madmatvey/xml2apitest/badges/issue_count.svg" />}[https://codeclimate.com/github/madmatvey/xml2apitest]
+{<img src="https://codeclimate.com/github/madmatvey/xml2apitest/badges/gpa.svg" />}[https://codeclimate.com/github/madmatvey/xml2apitest] {<img src="https://codeclimate.com/github/madmatvey/xml2apitest/badges/coverage.svg" />}[https://codeclimate.com/github/madmatvey/xml2apitest/coverage] {<img src="https://codeclimate.com/github/madmatvey/xml2apitest/badges/issue_count.svg" />}[https://codeclimate.com/github/madmatvey/xml2apitest]
 
 Test app for import tender procedures from API 24TENDER.ru
 

@@ -2,26 +2,26 @@ class NokogiriController < ApplicationController
   def index
     require 'open-uri'
     require 'sequel'
-    
+
     imports = Import.all
     import = Import.new
     if imports.size == 0
       import.time_from = Time.parse("2013-01-01T00:00").to_i
-    else 
+    else
       import.time_from = imports.last.time_to
     end
     import.time_to = Time.now.to_i
 
     if import.time_from + 300 > Time.now.to_i
       results = "OOPS! There are no 5 minutes from last import being.\n Now is #{Time.now} and last import was #{Time.at(import.time_from)} \n Wait for a #{Time.now.to_i - import.time_from - 300} seconds"
-    else 
+    else
       apiurl = "http://24tender.ru/api/trades/search?modifiedFrom="+Time.at(import.time_from).xmlschema+"&modifiedTo="+Time.at(import.time_to).xmlschema+"&page=1"
 
       doc = Nokogiri.XML(open(apiurl))
       doc.encoding = 'utf-8'
       data = Hash.from_xml(doc.to_s)
       xml_pages_count = data["source"]["PagesCount"].to_i
-     
+
       tenders = data["source"]["tender"]
 
       if xml_pages_count > 1
@@ -38,8 +38,10 @@ class NokogiriController < ApplicationController
 
       tenders_array_to_save = []
 
+
+# todo: rewrite this part of method with tender model and method_missing
       if tenders != nil
-        results = tenders 
+        results = tenders
         import.save
         tenders.each do |node|
           tmp_tender = Tender.new
@@ -72,12 +74,12 @@ class NokogiriController < ApplicationController
           tenders_array_to_save << tmp_tender
         end
         ActiveRecord::Base.transaction do
-          tenders_array_to_save.map {|tender| tender.save! } 
+          tenders_array_to_save.map {|tender| tender.save! }
         end
       else
-        results = "OOPS! There are no new tenders in database!" 
+        results = "OOPS! There are no new tenders in database!"
       end
-    end  
+    end
     # render the output as plain text page
     render :text => results, :content_type => 'text/plain'
   end

@@ -27,10 +27,9 @@ purchasefinishdate: 'PurchaseFinishDate',
  purchasedestination: 'PurchaseDestination',
 				 contactwith: 'ContactWith',
  contactwithposition: 'ContactWithPosition'
-
 }
 
-	def method_missing
+	def from_xml_hash
 
 	end
 
